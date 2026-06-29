@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field
 class JobCreate(BaseModel): 
     type: str = Field(..., description="Type of simulation, e.g. wind_analysis")
 
-class JobUpdate(BaseModel):
+class JobResponse(BaseModel):
     model_config= {"from_attributes": True}
 
     id: str
@@ -13,4 +13,3 @@ class JobUpdate(BaseModel):
     started_at: str | None 
     completed_at: str | None
 
-    
